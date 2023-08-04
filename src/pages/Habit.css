@@ -1,0 +1,102 @@
+.habitContainer {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  margin: 1.2rem;
+}
+
+.habitDiv {
+  border: 1px solid grey;
+  padding: 10px;
+  width: 190px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.habitDiv:hover {
+  color: grey;
+}
+
+/* habit form style */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.habitFormData {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  text-align: left;
+  align-items: left;
+  justify-content: center;
+  margin: 0 auto;
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.habitFormData label {
+  text-transform: uppercase;
+}
+
+.habitFormData input {
+  padding: 7px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.habitFormSpecial {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.3rem 0 0.3rem 0;
+}
+
+.habitFormSpecial select {
+  width: 165px;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.habitFormSpecial label {
+  text-transform: uppercase;
+}
+
+.habitFormHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saveBtn {
+  padding: 0.4rem;
+
+  border-radius: 10px;
+}
+
+.habitDetailsSpecialBtns {
+  display: flex;
+  gap: 0.3rem;
+  justify-content: space-between;
+}
+
+.habitDetailsSpecialBtns button {
+  border-radius: 10px;
+}
