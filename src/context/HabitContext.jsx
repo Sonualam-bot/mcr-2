@@ -42,7 +42,8 @@ export const HabitContextProvider = ({ children }) => {
 
     const handleSaveHabit = (page) => {
 
-        const newArray = page ? state.habitDb.map((habit, index) => index === +state.editHabitIndex ? { ...state.editingHabit } : habit) :
+        const newArray = page ? state.habitDb.map((habit, index) => index === +state.editHabitIndex ?
+            { ...state.editingHabit } : habit) :
             state.habitDb.concat(state.addHabit)
 
 
@@ -57,8 +58,8 @@ export const HabitContextProvider = ({ children }) => {
 
 
 
-    const deleteHabit = (name) => {
-        const deleteHabit = state.habitDb.filter((habit) => habit.name !== name)
+    const deleteHabit = (index) => {
+        const deleteHabit = state.habitDb.filter((habit, i) => i !== index)
         dispatch({
             type: "DELETE_HABIT",
             payload: {
@@ -66,16 +67,19 @@ export const HabitContextProvider = ({ children }) => {
             }
         })
     }
+    const archieveHabit = (index) => {
+        const archievedHabit = state.habitDb[index]; // Get the archived habit
+        const updatedHabitDb = state.habitDb.filter((_, i) => i !== index); // Remove the habit from habitDb
 
-    const archieveHabit = (name) => {
-        const archieve = state.habitDb.filter((habit) => habit.name !== name)
         dispatch({
             type: "ARCHIEVE_HABIT",
             payload: {
-                archieve: archieve
+                habitDb: updatedHabitDb,
+                archieve: [...state.archieveHabit, archievedHabit], // Add the habit to archieveHabit
             }
-        })
+        });
     }
+
 
     const handleShowEditForm = () => {
         dispatch({

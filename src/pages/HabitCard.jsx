@@ -18,8 +18,8 @@ export const HabitCard = ({ habit, index, singleHabit }) => {
                 {singleHabit && <p> Start Date : {startDate} </p>}
                 {!singleHabit &&
                     <div className="habitDetailsSpecialBtns">
-                        <button onClick={() => archieveHabit(name)}  >Archieve</button>
-                        <button onClick={() => deleteHabit(name)} >Delete</button>
+                        <button onClick={() => archieveHabit(index)}  >Archieve</button>
+                        <button onClick={() => deleteHabit(index)} >Delete</button>
                         <button onClick={() => {
                             handleEditHabit(habit, index)
                             handleShowEditForm()

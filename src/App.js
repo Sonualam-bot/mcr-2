@@ -3,6 +3,8 @@ import './App.css';
 import { Homepage } from "./pages/Homepage";
 import { SingleHabitPage } from "./pages/SingleHabitPage";
 import { Toaster } from "react-hot-toast";
+import { ArchievePage } from "./pages/ArchievePage";
+import { Header } from "./component/Header";
 
 function App() {
   return (
@@ -33,9 +35,12 @@ function App() {
           },
         }}
       />
+
+      <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/singleHabit/:habitIndex" element={<SingleHabitPage />} />
+        <Route path="/archieve" element={<ArchievePage />} />
       </Routes>
     </div>
   );

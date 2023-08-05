@@ -43,8 +43,12 @@ export const HabitReducer = (state, action) => {
         case "DELETE_HABIT":
             return { ...state, habitDb: payload.delete }
         case "ARCHIEVE_HABIT":
-            // console.log(payload)
-            return { ...state, archieveHabit: [...state.archieveHabit, payload.archieve] }
+            return {
+                ...state,
+                habitDb: payload.habitDb,
+                archieveHabit: payload.archieve,
+            };
+
         case "EDIT_FORM_OPEN":
             return { ...state, toggleEditForm: payload }
         case "EDIT_FORM_CLOSE":
