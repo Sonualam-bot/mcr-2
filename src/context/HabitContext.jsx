@@ -81,6 +81,17 @@ export const HabitContextProvider = ({ children }) => {
 
     }
 
+    const deleteFromArchieve = (index) => {
+        const updatedArchievedHabit = state.archieveHabitDb.filter((habit, i) => i !== index);
+
+        dispatch({
+            type: "DELETE_FROM_ARCHIEVE",
+            payload: {
+                updatedArchieved: updatedArchievedHabit
+            }
+        })
+    }
+
 
     const handleShowEditForm = () => {
         dispatch({
@@ -123,7 +134,8 @@ export const HabitContextProvider = ({ children }) => {
         handleShowEditForm,
         handleCloseEditForm,
         handleEditHabit,
-        handleEditValue
+        handleEditValue,
+        deleteFromArchieve
     }
 
 

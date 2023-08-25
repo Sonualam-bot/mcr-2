@@ -38,7 +38,7 @@ export const HabitForm = ({ editpage }) => {
                     <div class="w-full h-1 border-b-4 border-yellow-400 rounded-2xl  m-auto mb-1"></div>
 
                     <label className="font-bold" htmlFor="name" >Name</label>
-                    <input className="placeholder:italic border-stone-500 p-1 " type="text" placeholder="Enter habit name" name="name" value={formHabitEdit?.name || ""} onChange={addEditAction} />
+                    <input className="placeholder:italic border-stone-500 p-1 bg-slate-700 " type="text" placeholder="Enter habit name" name="name" value={formHabitEdit?.name || ""} onChange={addEditAction} />
                     <div className="flex gap-4"  >
                         <div className="flex flex-col w-full">
                             <label className="font-bold" htmlFor="repeat" >Repeat</label>

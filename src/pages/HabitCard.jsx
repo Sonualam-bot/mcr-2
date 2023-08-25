@@ -6,9 +6,9 @@ import { RiDeleteBinLine } from "react-icons/ri"
 import { FiEdit } from "react-icons/fi"
 import { toast } from "react-hot-toast";
 
-export const HabitCard = ({ habit, index, singleHabit }) => {
+export const HabitCard = ({ habit, index, singleHabit, archieve }) => {
     const { state: { archieveHabitDb }, deleteHabit, archieveHabit, handleEditHabit,
-        handleShowEditForm } = useContext(HabitContext)
+        handleShowEditForm, deleteFromArchieve } = useContext(HabitContext)
     const { name, repeat, goal, timeOfDay, startDate } = habit;
 
 
@@ -26,22 +26,30 @@ export const HabitCard = ({ habit, index, singleHabit }) => {
                 {singleHabit && <p className="text-left" > Start Date : {startDate} </p>}
                 {!singleHabit &&
                     <div className="flex m-1  gap-5 text-center space-x-10 ">
-                        <button onClick={() => {
+                        {!archieve && <button onClick={() => {
                             archieveHabit(index)
 
                         }}  >
 
-                            {archieveHabitDb?.includes(habit) ? <BsFillArchiveFill className="text-cyan-900" /> : <BsArchive className="text-cyan-600" />}
+                            <BsArchive className="text-cyan-600" />
 
-                        </button>
-                        <button onClick={() => {
+                        </button>}
+                        {archieve && <button onClick={() => {
+                            deleteFromArchieve(index)
+
+                        }}  >
+
+                            <BsFillArchiveFill className="text-cyan-900" />
+
+                        </button>}
+                        {!archieve && <button onClick={() => {
                             deleteHabit(index)
                             toast.success("Deleted ")
-                        }} > <RiDeleteBinLine className="text-red-700" /> </button>
-                        <button onClick={() => {
+                        }} > <RiDeleteBinLine className="text-red-700" /> </button>}
+                        {!archieve && <button onClick={() => {
                             handleEditHabit(habit, index)
                             handleShowEditForm()
-                        }} > <FiEdit className="text-blue-600" /> </button>
+                        }} > <FiEdit className="text-blue-600" /> </button>}
                     </div>}
             </div>
         </>

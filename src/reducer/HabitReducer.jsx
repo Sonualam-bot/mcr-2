@@ -60,6 +60,8 @@ export const HabitReducer = (state, action) => {
         case "EDIT_HABIT_VALUE":
             // console.log("edit habit value", payload)
             return { ...state, editingHabit: { ...payload } }
+        case "DELETE_FROM_ARCHIEVE":
+            return { ...state, archieveHabitDb: payload.updatedArchieved }
         default:
             throw new Error(`Unknown action type ${action.type}`)
     }
