@@ -28,28 +28,30 @@ export const HabitForm = ({ editpage }) => {
     return (
         <>
             <div className="modalOverlay" >
-                <div className="habitFormData" >
-                    <div className="habitFormHeader">
-                        <h3>New Habit</h3>
-                        {!editpage && <RxCross1 onClick={handleFormShow} />}
-                        {editpage && <RxCross1 onClick={handleCloseEditForm} />}
-                    </div>
+                <div className="habitFormData p-3 flex gap-2 " >
+                    <div className="habitFormHeader p-3 flex justify-between mb-0">
+                        <h3 className="font-bold mb-0">New Habit</h3>
+                        {!editpage && <RxCross1 className="cursor-pointer" onClick={handleFormShow} />}
+                        {editpage && <RxCross1 className="cursor-pointer" onClick={handleCloseEditForm} />}
 
-                    <label htmlFor="name" >Name</label>
-                    <input type="text" placeholder="enter habit name" name="name" value={formHabitEdit?.name || ""} onChange={addEditAction} />
-                    <div className="habitFormSpecial"  >
-                        <div>
-                            <label htmlFor="repeat" >Repeat</label>
-                            <select onChange={addEditAction} name="repeat" value={formHabitEdit?.repeat || ""} >
+                    </div>
+                    <div class="w-full h-1 border-b-4 border-yellow-400 rounded-2xl  m-auto mb-1"></div>
+
+                    <label className="font-bold" htmlFor="name" >Name</label>
+                    <input className="placeholder:italic border-stone-500 p-1 " type="text" placeholder="Enter habit name" name="name" value={formHabitEdit?.name || ""} onChange={addEditAction} />
+                    <div className="flex gap-4"  >
+                        <div className="flex flex-col w-full">
+                            <label className="font-bold" htmlFor="repeat" >Repeat</label>
+                            <select className="bg-slate-900 p-1 rounded-sm" onChange={addEditAction} name="repeat" value={formHabitEdit?.repeat || ""} >
                                 <option>Select</option>
                                 <option value="daily" >Daily</option>
                                 <option value="weekly" >Weekly</option>
                                 <option value="monthly" >Monthly</option>
                             </select>
                         </div>
-                        <div>
-                            <label htmlFor="goal" >Goal</label>
-                            <select onChange={addEditAction} name="goal" value={formHabitEdit?.goal || ""}>
+                        <div className="flex flex-col w-full">
+                            <label className="font-bold" htmlFor="goal" >Goal</label>
+                            <select className="bg-slate-900 p-1 rounded-sm" onChange={addEditAction} name="goal" value={formHabitEdit?.goal || ""}>
                                 <option>Select</option>
                                 <option value="1 Times Daily" >1 Times Daily</option>
                                 <option value="2 Times Daily " >2 Times Daily</option>
@@ -58,19 +60,19 @@ export const HabitForm = ({ editpage }) => {
                         </div>
                     </div>
 
-                    <div className="habitFormSpecial" >
-                        <div>
-                            <label htmlFor="timeOfDay" >Time Of Day</label>
-                            <select onChange={addEditAction} name="timeOfDay" value={formHabitEdit?.timeOfDay || ""}>
+                    <div className="flex gap-4"  >
+                        <div className="flex flex-col w-full">
+                            <label className="font-bold" htmlFor="timeOfDay" >Time Of Day</label>
+                            <select className="bg-slate-900 p-1 rounded-sm" onChange={addEditAction} name="timeOfDay" value={formHabitEdit?.timeOfDay || ""}>
                                 <option>Select</option>
                                 <option value="anytime" >Any Time</option>
                                 <option value="one hour before" >One Hour before</option>
                                 <option value="two hour before" >Two Hour before</option>
                             </select>
                         </div>
-                        <div>
-                            <label htmlFor="startDate" >Start Date</label>
-                            <select onChange={addEditAction} name="startDate" value={formHabitEdit?.startDate || ""} >
+                        <div className="flex flex-col w-full">
+                            <label className="font-bold" htmlFor="startDate" >Start Date</label>
+                            <select className="bg-slate-900 p-1 rounded-sm" onChange={addEditAction} name="startDate" value={formHabitEdit?.startDate || ""} >
                                 <option>Select</option>
                                 <option value="today" >Today</option>
                                 <option value="tomorrow" >Tomorrow</option>
@@ -79,7 +81,7 @@ export const HabitForm = ({ editpage }) => {
                         </div>
                     </div>
                     {/* {!isEditing && */}
-                    <button className="saveBtn" onClick={handleSavingHabitFormAction} >Save</button>
+                    <button className="bg-sky-600 mt-4 h-8 font-bold rounded-sm" onClick={handleSavingHabitFormAction} >Save</button>
                     {/* {isEditing && <button className="saveBtn" onClick={handleSaveEditedHabit}  >Update</button>} */}
                 </div>
             </div>

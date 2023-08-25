@@ -75,9 +75,10 @@ export const HabitContextProvider = ({ children }) => {
             type: "ARCHIEVE_HABIT",
             payload: {
                 habitDb: updatedHabitDb,
-                archieve: [...state.archieveHabit, archievedHabit], // Add the habit to archieveHabit
+                archieve: [...state.archieveHabitDb, archievedHabit], // Add the habit to archieveHabit
             }
         });
+
     }
 
 

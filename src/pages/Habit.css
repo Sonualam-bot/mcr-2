@@ -1,4 +1,4 @@
-.habitContainer {
+/* .habitContainer {
   display: flex;
   gap: 1.2rem;
   align-items: center;
@@ -17,7 +17,7 @@
 
 .habitDiv:hover {
   color: grey;
-}
+} */
 
 /* habit form style */
 
@@ -38,10 +38,11 @@
   top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: rgb(2 6 23);
+  color: white;
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 360px;
   text-align: left;
   align-items: left;
   justify-content: center;
@@ -51,10 +52,10 @@
   border-radius: 10px;
 }
 
-.habitFormData label {
+/* .habitFormData label {
   text-transform: uppercase;
-}
-
+} */
+/* 
 .habitFormData input {
   padding: 7px;
   border-radius: 10px;
@@ -107,4 +108,4 @@
   align-items: center;
   margin: 0 auto;
   height: 8vh;
-}
+} */

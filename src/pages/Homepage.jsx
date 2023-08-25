@@ -10,9 +10,11 @@ export const Homepage = () => {
     const { state: { habitDb, show }, handleFormShow } = useContext(HabitContext)
     return (
         <>
-            <h2> Adding Habit </h2>
+            <h1 className="font-bold text-3xl mt-8  text-white uppercase" > Habits </h1>
+            <div class="w-20 h-1 border-b-4 border-yellow-400 rounded-2xl mb-12 m-auto"></div>
             <div>
-                <button onClick={handleFormShow} >Add Habit</button>
+                <button className=" text-center mt-2 text-white text-base p-2 rounded-xl hover:bg-white
+   hover:text-black dark:bg-red-600" onClick={handleFormShow} >Add New Habit</button>
             </div>
 
             {
@@ -21,7 +23,7 @@ export const Homepage = () => {
 
             {<EditHabit />}
 
-            <div className="habitContainer" >
+            <div className="flex gap-2 mt-8 justify-center" >
                 {
                     habitDb.map((habit, index) => {
 

@@ -13,10 +13,11 @@ export const SingleHabitPage = () => {
 
     return (
         <>
-            <u>
-                <h1>Habit Details</h1>
-            </u>
-            <div className="habitContainer" >
+
+            <h1 className="font-bold text-3xl mt-8  text-white uppercase">Habit Details</h1>
+            <div class="w-40 h-1 border-b-4 border-yellow-400 rounded-2xl mb-12 m-auto"></div>
+
+            <div className="flex justify-center m-auto" >
                 <HabitCard habit={habitDetails} singleHabit />
             </div>
         </>

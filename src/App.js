@@ -8,7 +8,7 @@ import { Header } from "./component/Header";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-slate-900 h-screen">
 
       <Toaster
         position="top-right"

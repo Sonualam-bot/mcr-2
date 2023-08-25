@@ -11,7 +11,7 @@ export const initialState = {
         startDate: ""
 
     },
-    archieveHabit: [],
+    archieveHabitDb: [],
     toggleEditForm: false,
     editingHabit: null,
     editHabitIndex: null
@@ -46,7 +46,7 @@ export const HabitReducer = (state, action) => {
             return {
                 ...state,
                 habitDb: payload.habitDb,
-                archieveHabit: payload.archieve,
+                archieveHabitDb: payload.archieve,
             };
 
         case "EDIT_FORM_OPEN":
